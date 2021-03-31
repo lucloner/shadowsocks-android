@@ -29,6 +29,14 @@ android {
     sourceSets.getByName("androidTest") {
         assets.setSrcDirs(assets.srcDirs + files("$projectDir/schemas"))
     }
+
+    ndkVersion="20.1.5948944"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion = "android-S"
+    buildToolsVersion = "30.0.2"
 }
 
 cargo {
@@ -62,17 +70,17 @@ tasks.register<Exec>("cargoClean") {
 tasks.clean.dependsOn("cargoClean")
 
 dependencies {
-    val coroutinesVersion = "1.4.2"
+    val coroutinesVersion = "1.4.3-native-mt"
     val roomVersion = "2.2.6"
     val workVersion = "2.5.0"
 
     api(project(":plugin"))
     api("androidx.appcompat:appcompat:1.2.0")
-    api("androidx.core:core-ktx:1.5.0-beta01")
+    api("androidx.core:core-ktx:1.5.0-beta03")
 
-    api("androidx.fragment:fragment-ktx:1.3.0-rc02")
-    api("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
-    api("androidx.lifecycle:lifecycle-livedata-core-ktx:$lifecycleVersion")
+    api("androidx.fragment:fragment-ktx:1.3.1")
+    api("androidx.lifecycle:lifecycle-common-java8:2.3.0")
+    api("androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.0")
     api("androidx.preference:preference:1.1.1")
     api("androidx.room:room-runtime:$roomVersion")
     api("androidx.work:work-multiprocess:$workVersion")
@@ -80,7 +88,7 @@ dependencies {
     api("com.google.android.gms:play-services-oss-licenses:17.0.0")
     api("com.google.code.gson:gson:2.8.6")
     api("com.google.firebase:firebase-analytics-ktx:18.0.2")
-    api("com.google.firebase:firebase-crashlytics:17.3.1")
+    api("com.google.firebase:firebase-crashlytics:17.4.0")
     api("com.jakewharton.timber:timber:4.7.1")
     api("dnsjava:dnsjava:3.3.1")
     api("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")

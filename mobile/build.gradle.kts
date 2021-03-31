@@ -8,18 +8,27 @@ plugins {
 }
 
 setupApp()
+android {
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion = "android-S"
+    buildToolsVersion = "30.0.2"
+    ndkVersion = "20.1.5948944"
+}
 
 android.defaultConfig.applicationId = "com.github.shadowsocks"
 
 dependencies {
-    val cameraxVersion = "1.0.0-rc02"
+    val cameraxVersion = "1.1.0-alpha02"
 
     implementation("androidx.browser:browser:1.3.0")
     implementation("androidx.camera:camera-camera2:$cameraxVersion")
     implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
-    implementation("androidx.camera:camera-view:1.0.0-alpha21")
+    implementation("androidx.camera:camera-view:1.0.0-alpha22")
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.0")
     implementation("com.google.mlkit:barcode-scanning:16.1.1")
     implementation("com.google.zxing:core:3.4.1")
     implementation("com.takisoft.preferencex:preferencex-simplemenu:1.1.0")

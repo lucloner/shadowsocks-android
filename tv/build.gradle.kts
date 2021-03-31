@@ -8,6 +8,15 @@ plugins {
 }
 
 setupApp()
+android {
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion = "android-S"
+    buildToolsVersion = "30.0.2"
+    ndkVersion = "20.1.5948944"
+}
 
 android.defaultConfig.applicationId = "com.github.shadowsocks.tv"
 

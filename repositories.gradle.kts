@@ -4,6 +4,8 @@ rootProject.extra.apply {
 }
 
 repositories {
+    maven { setUrl("https://maven.aliyun.com/repository/google/")}
+    maven { setUrl("https://maven.aliyun.com/repository/jcenter/")}
     google()
     jcenter()
 }
